@@ -133,5 +133,42 @@ body {
   font-size: smaller;
 }
 
+.corresponding-author {
+  font-size: smaller;
+}
 
 
+/* 确保图片和子标题之间没有间隔 */
+.hero-body figure {
+  display: inline-block; /* 或者使用 float: left; 根据需要选择 */
+  vertical-align: top; /* 保持顶部对齐 */
+  width: calc(33% - 4px); /* 分配每个图像大约三分之一的宽度，根据实际情况调整 */
+  margin-right: 4px; /* 这是图像之间的间隔，根据需要调整 */
+}
+
+/* 最后一个图像不需要右边距 */
+.hero-body figure:last-child {
+  margin-right: 0;
+}
+
+/* 图像样式 */
+.hero-body img {
+  width: 100%; /* 使图像填满其容器 */
+  display: block; /* 解决底部空隙问题 */
+}
+
+/* 子标题样式 */
+.hero-body figcaption {
+  text-align: center; /* 居中子标题 */
+  margin-top: 8px; /* 在图像和子标题之间添加一些空间 */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .hero-body figure {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 16px; /* 为堆叠的图像添加底部间隔 */
+  }
+}
